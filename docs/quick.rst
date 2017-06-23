@@ -28,15 +28,16 @@ when using h5py is:
 
     **Groups work like dictionaries, and datasets work like NumPy arrays**
 
-The very first thing you'll need to do is create a new file::
+The very first thing you'll need to do is create a new empty hdf5 file object in your
+local working directory. You will use h5py to write data into this empty file later::
 
     >>> import h5py
     >>> import numpy as np
     >>>
     >>> f = h5py.File("mytestfile.hdf5", "w")
 
-The :ref:`File object <file>` is your starting point.  It has a couple of
-methods which look interesting.  One of them is ``create_dataset``::
+The :ref:`File object <file>` is your starting point.  To write data into your new
+empty object, h5py uses the method: ``create_dataset``::
 
     >>> dset = f.create_dataset("mydataset", (100,), dtype='i')
 
